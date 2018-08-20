@@ -13,7 +13,7 @@
       <li><a href="/signup">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
       <% else %>
-      <li><a href="/account"><%=session[:user]%></a></li>
+      <li><a href="/account"><%=session[:user].firstname%></a></li>
       <li><a href="/logout">Log Out<a/></li>
       <% end %>
     </ul>
@@ -26,6 +26,6 @@
     </div>
   <% end %>
 
-    <%= yield%>
+    <%= yield %>
   </body>
 </html>
