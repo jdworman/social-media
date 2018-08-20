@@ -7,57 +7,56 @@ require './models'
 
 set :database, 'sqlite3:rumblr.sqlite3'
 
+get '/home' do
+  erb :home
+end
+
 get '/' do
   @user = User.all
   p @users
   erb :home
 end
 
-get '/home' do
-  erb :home
+get '/signup' do
+  erb :signup
+end
+
+post '/signup' do
+  email = params[:email]
+  password = params[:password]
+  reenter_password = params[:reenter_password]
+  firstname = params[:firstname]
+  lastname = params[:lastname]
+  birthday = params[:birthday]
 end
 
 get '/login' do
   erb :login
 end
 
+
 post '/login' do
   email = params['email']
   given_password = params['password']
-  user = User.find_by(email: email)
+
+  user =  User.find_by(email: email)
   if user.password == given_password
     session[:user] = user
     redirect :account
+    flash[:info] = "You have successfully logged in, #{@user.firstname}."
   else
-    flash[:warning] = 'You could not be signed in. Did you enter the correct username and password?'
-    redirect '/signup'
- end
-end
-
-get '/signup' do
-  erb :signup
+        flash[:warning] = 'Invalid username or password.'
+    redirect '/login'
+  end
 end
 
 
 
-post '/signup' do
-  p params
-
-  user = User.new(
-    email: params['email'],
-    firstname: params['firstname'],
-    lastname: params['lastname'],
-    password: params['password']
-  )
-  user.save
-else
-  flash[:notice] = 'Username taken'
-  redirect '/signup'
-end
 
 get '/account' do
   erb :account
 end
+
 
 get '/logout' do
   session[:user] = nil
@@ -66,5 +65,9 @@ get '/logout' do
 end
 
 get '/setting' do
-  erb :setting
+  erb :Setting
+end
+
+get '/profile' do
+  erb :profile
 end
