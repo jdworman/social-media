@@ -44,8 +44,9 @@ post '/signup' do
 
   user = User.new(
     email: params['email'],
-    name: params['name'],
-    password: params['password']
+    firstname: params['firstname'],
+    lastname: params['lastname'],
+    password_hash: params['password']
   )
   user.save
   redirect '/'
