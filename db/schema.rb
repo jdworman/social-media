@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2018_08_20_011642) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index [nil], name: "index_users_on_username", unique: true
   end
 
 end

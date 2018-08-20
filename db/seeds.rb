@@ -9,14 +9,6 @@ User.create(
 )
 
 User.create(
-  email: 'blissend@gmail.com',
-  password: 'password',
-  firstname: 'Adam',
-  lastname: 'Carlin',
-  birthday: '10/09/1982'
-)
-
-User.create(
   email: 'wishitwas@gmail.com',
   password: 'password',
   firstname: 'Johnny',
@@ -33,5 +25,3 @@ User.create(
     datetime: Time.now
   )
 end
-
- 
