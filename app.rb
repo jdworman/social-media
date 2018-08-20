@@ -15,6 +15,7 @@ get '/' do
 end
 
 get '/login' do
+     flash[:warning] = "We did it!"
   erb :login
 end
 
