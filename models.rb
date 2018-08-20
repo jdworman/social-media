@@ -3,7 +3,6 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
 
- class Posts
   def password
     @password ||= Password.new(password_hash)
   end
@@ -16,4 +15,5 @@ class User < ActiveRecord::Base
 end
 
 class Post < ActiveRecord::Base
+  belongs_to :user
 end
