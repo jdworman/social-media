@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+     <div id="navbar">
+       <ul>
+      <li><a href="/">Home</a></li>
+      <% if session[:user] == nil%>
+      <li><a href="/signup">Sign Up</a></li>
+      <li><a href="/login">Log In</a></li>
+      <% else %>
+      <li><a href="/account"><%=session[:user]%></a></li>
+      <li><a href="/logout">Log Out<a/></li>
+      <% end %>
+    </ul>
+  </div>
+    <%= yield%>
+  </body>
+</html>
