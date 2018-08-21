@@ -2,10 +2,15 @@ source 'https://rubygems.org'
 
 gem 'activerecord'
 gem 'sinatra-activerecord'
-gem 'sqlite3'
 gem 'rake'
-gem 'lorem_ipsum_amet'
 gem 'faker'
 gem 'sinatra-flash'
-gem 'sinatra-reloader'
 gem 'sinatra-contrib'
+
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end

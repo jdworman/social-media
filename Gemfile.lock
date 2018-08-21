@@ -19,10 +19,10 @@ GEM
       i18n (>= 0.7)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
-    lorem_ipsum_amet (0.6.2)
     minitest (5.11.3)
     multi_json (1.13.1)
     mustermann (1.0.3)
+    pg (1.0.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
@@ -45,8 +45,6 @@ GEM
       tilt (>= 1.3, < 3)
     sinatra-flash (0.3.0)
       sinatra (>= 1.0.0)
-    sinatra-reloader (1.0)
-      sinatra-contrib
     sqlite3 (1.3.13)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -59,12 +57,11 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   faker
-  lorem_ipsum_amet
+  pg
   rake
   sinatra-activerecord
   sinatra-contrib
   sinatra-flash
-  sinatra-reloader
   sqlite3
 
 BUNDLED WITH

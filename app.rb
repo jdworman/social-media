@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
-require 'sinatra/reloader'
 require 'sinatra/cookies'
 enable :sessions
 require './models'
@@ -58,7 +57,7 @@ post '/signup' do
     password: params[:password],
     firstname: params[:firstname],
     lastname: params[:lastname],
-    birthday: params[:month] params[:day] params[:year]  
+    birthday: params[:month] params[:day] params[:year]
   )
   user.save
   session[:user] = user
