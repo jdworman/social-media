@@ -3,9 +3,10 @@ require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'sinatra/cookies'
 enable :sessions
-require './models'
 
-set :database, 'sqlite3:rumblr.sqlite3'
+require 'active_record'
+# set :database, 'sqlite3:rumblr.sqlite3'
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 # Verify authenticity of user
 def CheckAuth()
@@ -123,3 +124,5 @@ end
 post '/birthday' do
   params
 end
+
+require './models'
