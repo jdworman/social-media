@@ -3,4 +3,6 @@
 <% else %>
 <h2>Hello</h2>
 <% end %>
+<% if session[:user].nil? %>
 <a href="/signup">Click here to create an account</a> - <a href="/login">Log in</a>
+<% end %>

@@ -62,6 +62,7 @@ DEPENDENCIES
   lorem_ipsum_amet
   rake
   sinatra-activerecord
+  sinatra-contrib
   sinatra-flash
   sinatra-reloader
   sqlite3
