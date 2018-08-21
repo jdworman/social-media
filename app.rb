@@ -58,7 +58,7 @@ post '/signup' do
     password: params[:password],
     firstname: params[:firstname],
     lastname: params[:lastname],
-    birthday: params[:month], params[:day], params[:year]
+    birthday: params[:birthday] 
   )
   user.save
   session[:user] = user
