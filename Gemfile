@@ -6,6 +6,7 @@ gem 'rake'
 gem 'faker'
 gem 'sinatra-flash'
 gem 'sinatra-contrib'
+gem 'bcryp'
 
 group :development do
   gem 'sqlite3'
