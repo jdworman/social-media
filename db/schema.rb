@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_154818) do
     t.string "password_hash"
     t.string "firstname"
     t.string "lastname"
-    t.datetime "birthday"
+    t.string "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true

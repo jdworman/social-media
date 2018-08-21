@@ -58,7 +58,7 @@ post '/signup' do
     password: params[:password],
     firstname: params[:firstname],
     lastname: params[:lastname],
-    birthday: params[:birthday]
+    birthday: params[:month] params[:day] params[:year]  
   )
   user.save
   session[:user] = user
@@ -115,4 +115,12 @@ post '/delete' do
   session.clear
   response.set_cookie("user", :value => "")
   redirect '/'
+end
+
+get '/post' do
+  erb :post
+end
+
+post '/birthday' do
+  params
 end
