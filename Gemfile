@@ -7,6 +7,7 @@ gem 'faker'
 gem 'sinatra-flash'
 gem 'sinatra-contrib'
 gem 'bcrypt'
+gem 'will_paginate'
 
 group :development do
   gem 'sqlite3'

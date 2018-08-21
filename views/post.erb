@@ -1,2 +1,15 @@
-<div id="posts-container" class="container">
-  
+<div class="post-form">
+  <form method="post" action="signup">
+    <h2>Post a tip?</h2>
+    <%= @user.firstname %> <%= @user.lastname %> <br>
+    <input type='test' name="Title" placeholder="Title"> <br>
+    <input type='password' name="confirmpassword" placeholder="Your test here"> <br>
+    <input type='text' name="image_url" placeholder="Place your image here"> <br>
+    <input type='text' name="lastname" placeholder="Last Name">
+    <br>
+
+    <input type="submit" value="Close">
+    <input type="submit" value="Post">
+
+  </form>
+</div>

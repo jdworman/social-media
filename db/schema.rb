@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2018_08_20_154818) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "user_id"
+    t.string "firstname"
+    t.string "lastname"
     t.string "image_url"
     t.datetime "datetime"
   end
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_154818) do
     t.string "firstname"
     t.string "lastname"
     t.string "birthday"
+    t.string "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true

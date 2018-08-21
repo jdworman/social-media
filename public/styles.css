@@ -60,6 +60,10 @@ h2 {
   border-radius: 10 px;
 }
 
+h3 {
+  margin-top: 2%;
+}
+
 button {
   color: blue;
   padding: 2px;
@@ -147,6 +151,28 @@ select {
   margin: -50px;
   padding: 0px;
 }
-element.style {
-    margin-top: -201px;
-}
+
+/* Post
+================================= */
+.username .caption {
+    font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #444;
+  }
+
+.controls-container {
+    display: table;
+    width: 100%;
+    padding: 10px 15px 10px 20px;
+    box-sizing: border-box;
+  }
+
+  title-field  {
+      font-family: Gibson,Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 47px;
+  }
+
+  

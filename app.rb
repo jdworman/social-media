@@ -5,6 +5,10 @@ require 'sinatra/cookies'
 enable :sessions
 
 require 'active_record'
+require 'will_paginate'
+require 'will_paginate/active_record'
+require './models'
+
 set :database, 'sqlite3:rumblr.sqlite3'
 # ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
@@ -67,7 +71,7 @@ post '/signup' do
     :domain => "",
     :path => "",
     :expires => Time.now + 3600*24)
-  redirect '/account'
+  redirect '/new'
 end
 
 get '/login' do
@@ -90,6 +94,7 @@ post '/login' do
     redirect '/login'
   end
 end
+
 
 get '/account' do
   erb :account
@@ -118,11 +123,19 @@ post '/delete' do
 end
 
 get '/post' do
+    @user = session[:user] 
   erb :post
+end
+
+post '/post' do
+	@post = Post.create(title: params[:title], body: params[:body])
+	redirect '/'
 end
 
 post '/birthday' do
   params
 end
 
-require './models'
+get '/new' do
+  erb :new
+end
