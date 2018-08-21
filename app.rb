@@ -5,8 +5,8 @@ require 'sinatra/cookies'
 enable :sessions
 
 require 'active_record'
-# set :database, 'sqlite3:rumblr.sqlite3'
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+set :database, 'sqlite3:rumblr.sqlite3'
+# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 # Verify authenticity of user
 def CheckAuth()
@@ -58,7 +58,7 @@ post '/signup' do
     password: params[:password],
     firstname: params[:firstname],
     lastname: params[:lastname],
-    birthday: params[:birthday] 
+    birthday: params[:birthday]
   )
   user.save
   session[:user] = user
