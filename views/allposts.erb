@@ -1,8 +1,8 @@
 
-</div><%= @maker.firstname %>
+
 <div class="message-container">
     <div class="message-box">
-      <% @maker.posts.all.reverse.first(20).each do |m|  %>
+      <% Post.all.reverse.first(20).each do |m|  %>
       <div class="message-title">
       <p><%= m.title %></p>
       <div class="message-content">

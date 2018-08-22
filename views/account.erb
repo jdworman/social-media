@@ -1,3 +1,15 @@
+<div class="Profile">
+<h2>Profile</h2>
+<br>
+ NAME:
+ <%= session[:user].firstname %>
+ <%= session[:user].lastname %><br>
+<br>
+BIRTHDAY:
+<%= session[:user].birthday %><br>
+EMAIL:
+<%= session[:user].email %><br>
+
 <div class="message-container">
     <div class="message-box">
       <% session[:user].posts.all.reverse.first(20).each do |m|  %>

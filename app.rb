@@ -59,7 +59,7 @@ post '/login' do
                         domain: '',
                         path: '',
                         expires: Time.now + 3600 * 24)
-    redirect :account
+    redirect :allposts
     flash[:info] = 'You have successfully logged in, <%= session[:user].firstname %>.'
   else
     flash[:warning] = 'Invalid username or password.'
@@ -108,7 +108,7 @@ post '/post' do
     user_id: session[:user].id
   )
   post.save
-  redirect :account
+  redirect :allposts
 end
 
 post '/birthday' do
@@ -119,8 +119,8 @@ get '/new' do
   erb :new
 end
 
-post '/posts' do
-  erb :posts
+get '/allposts' do
+  erb :allposts
 end
 
 post '/delete' do
