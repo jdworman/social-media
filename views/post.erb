@@ -1,15 +1,10 @@
-<div class="post-form">
-  <form method="post" action="signup">
-    <h2>Post a tip?</h2>
-    <%= @user.firstname %> <%= @user.lastname %> <br>
-    <input type='test' name="Title" placeholder="Title"> <br>
-    <input type='password' name="confirmpassword" placeholder="Your test here"> <br>
-    <input type='text' name="image_url" placeholder="Place your image here"> <br>
-    <input type='text' name="lastname" placeholder="Last Name">
-    <br>
-
-    <input type="submit" value="Close">
-    <input type="submit" value="Post">
-
+<div class="container" id="new-message">
+  <form action="/post" method="post">
+    <h3>New Messagge</h3>
+    <textarea id="post-title" name="title" placeholder="Title" required></textarea>
+    <textarea id="post-content" name="content" placeholder="Content" required></textarea>
+    <textarea id="post-image" name="image_url" placeholder="Image url (optional)"></textarea>
+    <input type="submit" id="post-btn" class="btn btn-info">
   </form>
 </div>
+ 

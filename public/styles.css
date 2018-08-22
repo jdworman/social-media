@@ -1,5 +1,5 @@
-/* Body
-================================= */
+/* body
+=================================   */
 
 body {
   background-color: #8A0651;
@@ -175,4 +175,21 @@ select {
       line-height: 47px;
   }
 
-  
+  .login-form {
+    display: flex;
+    flex-direction: column; }
+    .login-form > * {
+      padding: 1000px; }
+    .login-form span input {
+      width: 100%; }
+    .login-form .user-info-btn {
+      width: 40%;
+      margin: 15px auto; }
+
+      iv.picture1 {
+         width:100px; /*width of your image*/
+         height:100px; /*height of your image*/
+         background-image:url('images/backpackers.jpeg');
+         margin:0; /* If you want no margin */
+         padding:0; /*if your want to padding */
+      }
