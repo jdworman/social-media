@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_222217) do
     t.string "lastname"
     t.string "image_url"
     t.datetime "created_at"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

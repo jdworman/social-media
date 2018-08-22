@@ -1,0 +1,180 @@
+/* Body
+================================= */
+
+body {
+  background-color: #2a2a2e;
+  color: #ffcb04;
+  background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.7), black), url("images/backpackers.jpeg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: floralwhite;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 50px;
+  text-shadow: 2px 2px 2px black;
+}
+
+h2 {
+  color: floralwhite;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 25px;
+  padding: 5px;
+  margin: -5px;
+}
+
+h3 {
+  color: yellow;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 15px;
+  padding: 0;
+  margin: -5px;
+}
+
+h4 {
+  color: yellow;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 25px;
+}
+
+h5 {
+  color: floralwhite;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  text-decoration: underline;
+  text-decoration-color: #ffcb04;
+  font-size: 50px;
+  text-shadow: 2px 2px 2px black;
+  margin: -70px;
+}
+
+h6 {
+  color: floralwhite;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 50px;
+  margin: 50px;
+  padding: 6px;
+}
+
+p {
+  color: floralwhite;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 50px;
+  text-shadow: 2px 2px 2px black;
+}
+
+a {
+  color: #fff;
+}
+
+a:visited {
+  color: #fff;
+}
+
+.address {
+  color: floralwhite;
+  text-align: right;
+}
+
+/* Navigation section
+================================= */
+
+#navbar ul {
+  padding: 5px;
+  list-style-type: center;
+  text-align: center;
+  background-color: none;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+#navbar ul li {
+  display: inline;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  font-family: Arial;
+  padding: .2em 1em;
+  color: #fff;
+  background-color: none;
+}
+
+#navbar ul li a:hover {
+  color: none;
+  background-color: #e7a614;
+}
+/* Images
+================================= */
+
+.image1 {
+  margin-bottom: -230px;
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 100;
+  opacity: 0.5;
+}
+
+ /* Post
+=================================  */
+ .message-container {
+    display: grid;
+    grid-template: auto / auto auto auto;
+    text-align: center;
+    padding: 0;
+  }
+
+.message-box {
+  text-align: center;
+  padding: 5px;
+  margin: 6px;
+}
+
+.message-title {
+  background-color: green;
+  border-radius: 25px;
+  width: 300px;
+  height: auto;
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 0px;
+  margin: 3px;
+}
+
+
+.message-content {
+  position: relative;
+background: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: auto;
+padding: 20px;
+margin-bottom: 2em;
+width: 400px;
+box-sizing: border-box;
+}
+
+.form {
+  padding: 9px 0px 0px 648px;
+  margin: 20px;
+  justify-content: center;
+}

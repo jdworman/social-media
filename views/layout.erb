@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>Joseph's Social Media</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Barefoot Backpackers</title>
+    <link rel="stylesheet" href="/main.css">
   </head>
   <body>
      <div id="navbar">
@@ -22,6 +21,7 @@
     </ul>
   </div>
 
+
   <% flash.keys.each do |type| %>
     <div data-alert class="flash <%= type %> alert-box radius">
       <%= flash[type] %>
@@ -29,6 +29,9 @@
     </div>
   <% end %>
 
-    <%= yield %>
+
+  <%= yield %>
+
+
   </body>
 </html>
