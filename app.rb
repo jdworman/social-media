@@ -2,14 +2,14 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'sinatra/cookies'
+require 'date'
 enable :sessions
 
 require 'active_record'
-require 'will_paginate'
-require 'will_paginate/active_record'
 
-set :database, 'sqlite3:social-media.sqlite3'
-# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+
+# set :database, 'sqlite3:social-media.sqlite3'
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 get '/home' do
   erb :home
@@ -18,7 +18,7 @@ end
 get '/' do
   @user = User.all
   p @users
-  # check = CheckAuth()
+  check = CheckAuth()
   erb :home
 end
 
@@ -71,6 +71,7 @@ get '/profile' do
   erb :profile
 end
 
+
 get '/users/:id' do
   @maker = User.find(params[:id])
   erb :users
@@ -90,6 +91,14 @@ get '/logout' do
   response.set_cookie('user', value: '')
   flash[:notice] = 'You have been signed out.'
   redirect :home
+end
+
+get '/members' do
+  erb :members
+end
+
+post '/members' do
+  redirect :users
 end
 
 get '/post' do

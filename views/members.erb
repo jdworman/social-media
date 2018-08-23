@@ -1,9 +1,7 @@
-
-
+</div><%= @maker.firstname %>
 <div class="message-container">
     <div class="message-box">
-      <% Post.all.reverse.first(20).each do |m|  %>
-      <a href = "/users/<%= m.user_id%>"> <%= m.firstname %> </a> 
+      <% @maker.posts.all.reverse.first(20).each do |m|  %>
       <div class="message-title">
       <p><%= m.title %></p>
       <div class="message-content">

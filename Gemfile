@@ -8,6 +8,7 @@ gem 'sinatra-flash'
 gem 'sinatra-contrib'
 gem 'bcrypt'
 gem 'will_paginate'
+gem 'date'
 
 group :development do
   gem 'sqlite3'
