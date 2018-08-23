@@ -93,14 +93,7 @@ get '/logout' do
   redirect :home
 end
 
-get '/members' do
-  erb :members
-end
-
-post '/members' do
-  redirect :users
-end
-
+ 
 get '/post' do
   @user = session[:user]
     @allmessages = Post.all
