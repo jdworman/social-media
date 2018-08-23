@@ -93,7 +93,8 @@ get '/logout' do
   redirect :home
 end
 
- 
+
+
 get '/post' do
   @user = session[:user]
     @allmessages = Post.all

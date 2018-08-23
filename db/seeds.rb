@@ -1,7 +1,7 @@
 require 'faker'
 
 
-10.times do
+5.times do
   user = User.new(
   firstname: Faker::Name.first_name,
   lastname: Faker::Name.last_name,
@@ -12,7 +12,7 @@ user.save
 end
 
 User.all.each do |m|
-100.times do
+20.times do
   posts = Post.new(
   firstname: Faker::Name.first_name,
   lastname: Faker::Name.last_name,
