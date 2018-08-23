@@ -6,7 +6,7 @@ class CreatePostsTable < ActiveRecord::Migration[5.0]
       t.string :firstname
       t.string :lastname
       t.string :image_url
-      t.datetime 'created_at'
+      t.datetime :created_at
       t.integer :user_id
   end
   end
