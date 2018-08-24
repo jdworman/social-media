@@ -135,6 +135,8 @@ get '/*' do
   erb :unknown
 end
 
+
+
 # Verify authenticity of user
 def CheckAuth
   # Get the cookie/session
