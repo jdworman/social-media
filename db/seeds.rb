@@ -1,7 +1,7 @@
 require 'faker'
 
 
-5.times do
+20.times do
   user = User.new(
   firstname: Faker::Name.first_name,
   lastname: Faker::Name.last_name,
@@ -12,7 +12,7 @@ user.save
 end
 
 User.all.each do |m|
-20.times do
+30.times do
   messages = Post.new(
   title: Faker::WorldCup.city,
   content: Faker::BackToTheFuture.quote,
