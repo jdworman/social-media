@@ -7,13 +7,12 @@
   <body>
      <div id="navbar">
        <ul>
-      <li><a href="/">Home</a></li>
       <% if session[:user] == nil %>
       <li><a href="/signup">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
       <% else %>
       <li><a href="/account"><%= session[:user].firstname %>'s Profile</a></li>
-      <!-- <li><a href="/profile"><%=session[:user].firstname%>'s profile</a></li> -->
+<li><a href="/">Home</a></li>
       <li><a href="/setting">Setting</a></li>
         <li><a href="/post">Post</a></li>
       <li><a href="/logout">Log Out<a/></li>
