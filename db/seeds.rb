@@ -3,6 +3,8 @@ require 'faker'
 
 20.times do
   user = User.new(
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
   email: Faker::Internet.email,
   birthday: Faker::Date.birthday
 )
