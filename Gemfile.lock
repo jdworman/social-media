@@ -52,7 +52,6 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    will_paginate (3.1.6)
 
 PLATFORMS
   ruby
@@ -68,7 +67,6 @@ DEPENDENCIES
   sinatra-contrib
   sinatra-flash
   sqlite3
-  will_paginate
 
 BUNDLED WITH
    1.16.3
