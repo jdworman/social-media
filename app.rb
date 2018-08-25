@@ -8,8 +8,8 @@ enable :sessions
 require 'active_record'
 
 
-# set :database, 'sqlite3:social-media.sqlite3'
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+set :database, 'sqlite3:social-media.sqlite3'
+# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 get '/home' do
   erb :home
