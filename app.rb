@@ -8,8 +8,8 @@ enable :sessions
 require 'active_record'
 
 
-# set :database, 'sqlite3:social-media.sqlite3'
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+set :database, 'sqlite3:social-media.sqlite3'
+# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 get '/home' do
   erb :home
@@ -18,7 +18,7 @@ end
 get '/' do
   @user = User.all
   p @users
-  check = CheckAuth()
+  # check = CheckAuth()
   erb :home
 end
 
@@ -36,11 +36,11 @@ post '/signup' do
   )
   user.save
   session[:user] = user
-  response.set_cookie('user',
-                      value: user[:email], # not secure
-                      domain: '',
-                      path: '',
-                      expires: Time.now + 3600 * 24)
+  # response.set_cookie('user',
+  #                     value: user[:email], # not secure
+  #                     domain: '',
+  #                     path: '',
+  #                     expires: Time.now + 3600 * 24)
   redirect :new
 end
 
@@ -54,11 +54,11 @@ post '/login' do
   user = User.find_by(email: email)
   if user.password == given_password
     session[:user] = user
-    response.set_cookie('user',
-                        value: user[:email], # not secure
-                        domain: '',
-                        path: '',
-                        expires: Time.now + 3600 * 24)
+    # response.set_cookie('user',
+    #                     value: user[:email], # not secure
+    #                     domain: '',
+    #                     path: '',
+    #                     expires: Time.now + 3600 * 24)
     redirect :allposts
     flash[:info] = 'You have successfully logged in, <%= session[:user].firstname %>.'
   else
@@ -88,7 +88,7 @@ end
 
 get '/logout' do
   session.clear
-  response.set_cookie('user', value: '')
+  # response.set_cookie('user', value: '')
   flash[:notice] = 'You have been signed out.'
   redirect :home
 end
@@ -112,9 +112,6 @@ post '/post' do
   redirect :allposts
 end
 
-post '/birthday' do
-  params
-end
 
 get '/new' do
   erb :new
@@ -136,34 +133,34 @@ get '/*' do
 end
 
 
-
-# Verify authenticity of user
-def CheckAuth
-  # Get the cookie/session
-  user = request.cookies['user']
-  if user.nil?
-    if session[:user].nil?
-      flash[:notice] = "Cookie/Session does NOT exist"
-      return false
-    else
-      return true
-    end
-  else
-    check = false
-    @dbusers = User.all # efficient?
-    for u in @dbusers do
-      if u[:email] == user
-        check = true
-        session[:user] = u
-      end
-    end
-    if check == false
-      flash[:notice] = "Cookie user could not be found in DB"
-      return check
-    else
-      return true
-    end
-  end
-end
+#
+# # Verify authenticity of user
+# def CheckAuth
+#   # Get the cookie/session
+#   user = request.cookies['user']
+#   if user.nil?
+#     if session[:user].nil?
+#       flash[:notice] = "Cookie/Session does NOT exist"
+#       return false
+#     else
+#       return true
+#     end
+#   else
+#     check = false
+#     @dbusers = User.all # efficient?
+#     for u in @dbusers do
+#       if u[:email] == user
+#         check = true
+#         session[:user] = u
+#       end
+#     end
+#     if check == false
+#       flash[:notice] = "Cookie user could not be found in DB"
+#       return check
+#     else
+#       return true
+#     end
+#   end
+# end
 
 require './models'
